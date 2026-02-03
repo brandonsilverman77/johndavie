@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>His Honor, The Buckaroo — The Life of Mayor John L. Davie</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F5EFE0;
+    --parchment: #EDE4D0;
+    --ink: #1A1611;
+    --sepia: #5C4A32;
+    --rust: #8B3A2A;
+    --gold: #B8943E;
+    --faded: #9C8E78;
+    --divider: #C4B8A2;
+    --carnation: #C1392B;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'EB Garamond', 'Georgia', serif;
+    background-color: var(--cream);
+    color: var(--ink);
+    line-height: 1.7;
+    font-size: 18px;
+    overflow-x: hidden;
+  }
+
+  /* ── NOISE OVERLAY ── */
+  body::after {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  /* ── HERO / MASTHEAD ── */
+  .masthead {
+    text-align: center;
+    padding: 60px 20px 20px;
+    border-bottom: 3px double var(--ink);
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .dateline {
+    font-variant: small-caps;
+    letter-spacing: 4px;
+    font-size: 13px;
+    color: var(--faded);
+    margin-bottom: 8px;
+  }
+
+  .masthead h1 {
+    font-family: 'UnifrakturMaguntia', cursive;
+    font-size: clamp(48px, 8vw, 96px);
+    font-weight: 400;
+    line-height: 1.05;
+    color: var(--ink);
+    margin-bottom: 6px;
+    letter-spacing: 1px;
+  }
+
+  .subtitle-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin: 12px 0 4px;
+    font-variant: small-caps;
+    letter-spacing: 3px;
+    font-size: 13px;
+    color: var(--sepia);
+  }
+
+  .subtitle-bar .dot {
+    color: var(--carnation);
+    font-size: 20px;
+    line-height: 1;
+  }
+
+  .edition-line {
+    text-align: center;
+    font-style: italic;
+    font-size: 15px;
+    color: var(--faded);
+    padding: 10px 0 16px;
+    max-width: 1100px;
+    margin: 0 auto;
+    border-bottom: 1px solid var(--divider);
+  }
+
+  /* ── HERO BANNER ── */
+  .hero-banner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    border-bottom: 1px solid var(--divider);
+  }
+
+  .hero-text .kicker {
+    font-variant: small-caps;
+    letter-spacing: 3px;
+    font-size: 12px;
+    color: var(--rust);
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .hero-text h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 900;
+    line-height: 1.15;
+    margin-bottom: 20px;
+    color: var(--ink);
+  }
+
+  .hero-text p {
+    font-size: 17px;
+    color: var(--sepia);
+    line-height: 1.8;
+    max-width: 480px;
+  }
+
+  .hero-visual {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .portrait-frame {
+    width: 100%;
+    max-width: 380px;
+    aspect-ratio: 3/4;
+    background: var(--parchment);
+    border: 2px solid var(--divider);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .portrait-frame::before {
+    content: '';
+    position: absolute;
+    inset: 8px;
+    border: 1px solid var(--divider);
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  .portrait-inner {
+    text-align: center;
+    padding: 30px;
+  }
+
+  .portrait-silhouette {
+    width: 160px;
+    height: 200px;
+    margin: 0 auto 20px;
+    background: var(--divider);
+    border-radius: 50% 50% 0 0;
+    position: relative;
+    opacity: 0.5;
+  }
+
+  .portrait-caption {
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    font-style: italic;
+    color: var(--faded);
+    line-height: 1.5;
+  }
+
+  .carnation {
+    color: var(--carnation);
+    font-size: 24px;
+    display: block;
+    margin-top: 8px;
+  }
+
+  /* ── LIFE ROLES RIBBON ── */
+  .roles-ribbon {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0;
+    border-bottom: 3px double var(--ink);
+    font-family: 'Playfair Display', serif;
+    font-size: 13px;
+    font-variant: small-caps;
+    letter-spacing: 2.5px;
+    color: var(--sepia);
+  }
+
+  .roles-ribbon span {
+    padding: 0 14px;
+    border-right: 1px solid var(--divider);
+    white-space: nowrap;
+    line-height: 2;
+  }
+
+  .roles-ribbon span:last-child {
+    border-right: none;
+  }
+
+  /* ── CONTENT SECTIONS ── */
+  .content-wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  section {
+    padding: 48px 0;
+    border-bottom: 1px solid var(--divider);
+  }
+
+  section:last-of-type {
+    border-bottom: none;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+
+  .section-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 900;
+    color: var(--divider);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .section-title .years {
+    font-weight: 400;
+    font-style: italic;
+    font-size: 16px;
+    color: var(--faded);
+    margin-left: 8px;
+  }
+
+  /* Column layout */
+  .two-col {
+    columns: 2;
+    column-gap: 40px;
+    column-rule: 1px solid var(--divider);
+  }
+
+  .two-col p {
+    margin-bottom: 16px;
+    text-align: justify;
+    hyphens: auto;
+  }
+
+  .single-col p {
+    max-width: 680px;
+    margin-bottom: 16px;
+    text-align: justify;
+  }
+
+  .dropcap::first-letter {
+    font-family: 'Playfair Display', serif;
+    float: left;
+    font-size: 72px;
+    line-height: 0.75;
+    padding-right: 8px;
+    padding-top: 6px;
+    font-weight: 900;
+    color: var(--rust);
+  }
+
+  /* ── PULL QUOTE ── */
+  .pullquote {
+    margin: 32px 0;
+    padding: 28px 32px;
+    border-top: 2px solid var(--ink);
+    border-bottom: 2px solid var(--ink);
+    text-align: center;
+    break-inside: avoid;
+  }
+
+  .pullquote p {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-style: italic;
+    font-weight: 700;
+    line-height: 1.5;
+    color: var(--ink);
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .pullquote .attr {
+    font-family: 'EB Garamond', serif;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 2px;
+    font-variant: small-caps;
+    color: var(--faded);
+    margin-top: 12px;
+    display: block;
+  }
+
+  /* ── TIMELINE ── */
+  .timeline {
+    position: relative;
+    padding-left: 40px;
+    margin: 32px 0;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 12px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: var(--divider);
+  }
+
+  .timeline-item {
+    position: relative;
+    margin-bottom: 24px;
+    padding-left: 8px;
+  }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -32px;
+    top: 8px;
+    width: 9px;
+    height: 9px;
+    background: var(--carnation);
+    border-radius: 50%;
+  }
+
+  .timeline-year {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--rust);
+    margin-bottom: 2px;
+  }
+
+  .timeline-text {
+    font-size: 16px;
+    color: var(--sepia);
+    line-height: 1.6;
+  }
+
+  /* ── ACCOMPLISHMENTS GRID ── */
+  .acc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin-top: 24px;
+  }
+
+  .acc-card {
+    padding: 24px;
+    border: 1px solid var(--divider);
+    background: var(--parchment);
+  }
+
+  .acc-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--ink);
+  }
+
+  .acc-card p {
+    font-size: 15px;
+    color: var(--sepia);
+    line-height: 1.6;
+  }
+
+  /* ── THE MASK INCIDENT ── */
+  .aside-box {
+    background: var(--parchment);
+    border: 1px solid var(--divider);
+    padding: 28px 32px;
+    margin: 28px 0;
+    position: relative;
+    break-inside: avoid;
+  }
+
+  .aside-box::before {
+    content: 'SIDEBAR';
+    position: absolute;
+    top: -10px;
+    left: 24px;
+    background: var(--parchment);
+    padding: 0 8px;
+    font-family: 'Playfair Display', serif;
+    font-variant: small-caps;
+    letter-spacing: 3px;
+    font-size: 11px;
+    color: var(--faded);
+  }
+
+  .aside-box h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--rust);
+  }
+
+  .aside-box p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--sepia);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+    border-top: 3px double var(--ink);
+  }
+
+  footer .colophon {
+    font-variant: small-caps;
+    letter-spacing: 3px;
+    font-size: 12px;
+    color: var(--faded);
+    margin-bottom: 12px;
+  }
+
+  footer p {
+    font-size: 14px;
+    color: var(--faded);
+    line-height: 1.7;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  footer .carnation-footer {
+    color: var(--carnation);
+    font-size: 28px;
+    display: block;
+    margin-top: 20px;
+  }
+
+  /* ── NAV RIBBON ── */
+  .nav-ribbon {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--ink);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    flex-wrap: wrap;
+  }
+
+  .nav-ribbon a {
+    font-family: 'Playfair Display', serif;
+    font-variant: small-caps;
+    letter-spacing: 2px;
+    font-size: 12px;
+    color: var(--parchment);
+    text-decoration: none;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+  }
+
+  .nav-ribbon a:hover {
+    opacity: 1;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .hero-banner {
+      grid-template-columns: 1fr;
+      padding: 28px 20px;
+    }
+
+    .hero-visual {
+      order: -1;
+    }
+
+    .portrait-frame {
+      max-width: 260px;
+      margin: 0 auto;
+    }
+
+    .two-col {
+      columns: 1;
+    }
+
+    .roles-ribbon {
+      font-size: 11px;
+      letter-spacing: 1.5px;
+    }
+
+    .roles-ribbon span {
+      padding: 0 8px;
+    }
+
+    .section-number {
+      font-size: 36px;
+    }
+
+    .section-title {
+      font-size: 22px;
+    }
+
+    .nav-ribbon {
+      gap: 14px;
+    }
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .masthead, .hero-banner, section, .roles-ribbon {
+    animation: fadeUp 0.8s ease-out both;
+  }
+
+  .hero-banner { animation-delay: 0.15s; }
+  .roles-ribbon { animation-delay: 0.25s; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav-ribbon">
+  <a href="#origins">Origins</a>
+  <a href="#adventures">Adventures</a>
+  <a href="#waterfront">The Waterfront War</a>
+  <a href="#mayor">The Mayor</a>
+  <a href="#legacy">Legacy</a>
+  <a href="#book">The Book</a>
+</nav>
+
+<!-- MASTHEAD -->
+<header class="masthead">
+  <div class="dateline">Oakland, California &middot; Established 1852</div>
+  <h1>His Honor, the Buckaroo</h1>
+  <div class="subtitle-bar">
+    <span>The Extraordinary Life of</span>
+    <span class="dot">❧</span>
+    <span>Mayor John Leslie Davie</span>
+  </div>
+</header>
+
+<div class="edition-line">
+  Mule Driver &middot; Opera Singer &middot; Rancher &middot; Attorney &middot; Bookseller &middot; Ferry Captain &middot; Five-Term Mayor of Oakland
+</div>
+
+<!-- HERO -->
+<div class="hero-banner">
+  <div class="hero-text">
+    <span class="kicker">Oakland's Longest-Serving Mayor</span>
+    <h2>The Man Who Took On the Railroad&hairsp;&mdash;&hairsp;and&nbsp;Won</h2>
+    <p>
+      Born in upstate New York in 1850, John L. Davie lived more lives than most novelists could
+      invent. He drove mules on the Erie Canal as a teenager, fled the Great Chicago Fire,
+      sang opera in San Francisco, battled the Southern Pacific Railroad for control of Oakland's
+      waterfront, and served five terms as the city's most beloved&mdash;and most
+      colorful&mdash;mayor. He wore a red carnation in his lapel every day in memory of his
+      late wife Ada, and rowed on Lake Merritt well into his eighties.
+    </p>
+  </div>
+  <div class="hero-visual">
+    <div class="portrait-frame">
+      <div class="portrait-inner">
+        <div class="portrait-silhouette"></div>
+        <div class="portrait-caption">
+          Mayor John L. Davie<br>
+          <em>Oakland, circa 1920</em><br>
+          <span class="carnation">✿</span>
+          <em style="font-size: 12px; color: var(--faded);">Always with his trademark<br>red carnation</em>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ROLES RIBBON -->
+<div class="roles-ribbon">
+  <span>Mule Driver</span>
+  <span>Opera Tenor</span>
+  <span>Actor</span>
+  <span>Inventor</span>
+  <span>Butcher</span>
+  <span>Rancher</span>
+  <span>Gold Miner</span>
+  <span>Bookseller</span>
+  <span>Attorney</span>
+  <span>Ferry Captain</span>
+  <span>Mayor</span>
+</div>
+
+<!-- CONTENT -->
+<div class="content-wrap">
+
+  <!-- § 1 — ORIGINS -->
+  <section id="origins">
+    <div class="section-header">
+      <span class="section-number">I</span>
+      <h3 class="section-title">A Boy on the Erie Canal <span class="years">1850–1871</span></h3>
+    </div>
+    <div class="two-col">
+      <p class="dropcap">John Leslie Davie was born on June 24, 1850, in Saratoga County, New York, where he grew up near the Carpentier family&mdash;a detail of some irony, as it was Horace Carpentier who would become Oakland's first mayor and infamously sign away the city's entire waterfront. Too young to fight in the Civil War, the teenage Davie took work as a mule driver on the Erie Canal, laboring alongside deserters, criminals, and other hardened men of that rough era.</p>
+      <p>It was a brutal education for a young man, but one that forged the stubborn, combative character that would later define his political life. The Canal was a school of hard knocks in the most literal sense, and Davie emerged from it with a constitution of iron and a vocabulary that Sacramento police officers would one day describe as "too foul to repeat in print."</p>
+      <p>Davie eventually made his way to Chicago, where he was studying law when the Great Chicago Fire of 1871 upended his plans entirely. With his prospects reduced to ashes, he headed west&mdash;first to Nevada, where he worked as a ranch hand, and then onward to San Francisco, arriving in 1876 to begin what would become one of the most varied and improbable careers in California history.</p>
+    </div>
+  </section>
+
+  <!-- § 2 — ADVENTURES -->
+  <section id="adventures">
+    <div class="section-header">
+      <span class="section-number">II</span>
+      <h3 class="section-title">The Many Lives of John L. Davie <span class="years">1876–1895</span></h3>
+    </div>
+    <div class="two-col">
+      <p class="dropcap">The list of occupations John Davie held during his years in California reads like a casting call for a particularly ambitious picaresque novel. In San Francisco, he performed as a tenor on the stages of the city's great opera houses. He tried his hand at acting. He worked as a butcher. He was a rancher, turning the Lassen County desert into prime cattle land. He was an inventor. And he searched for gold from the Trinity Alps all the way down to Mexico.</p>
+      <p>In the late 1880s, Davie moved across the bay to Oakland, where he opened a hay, coal, and feed business at 970 Washington Street. Next door, he opened a bookstore&mdash;and it was there, among the stacks, that he found himself in the company of some of California's finest literary minds: the poet Ina Coolbrith, the adventurer Joaquin Miller, and a scrappy young writer named Jack London.</p>
+
+      <div class="pullquote">
+        <p>"Citizen: Regains title to the entire Oakland waterfront for its people. Mayor: Serves five terms as Oakland's most popular mayor. Tenor: Performs on the stages of San Francisco's great opera houses. Bookseller: Supports California's early writers."</p>
+        <span class="attr">&mdash; From the jacket of <em>His Honor, the Buckaroo</em></span>
+      </div>
+
+      <p>In 1892, tragedy struck. His wife Ada died while pregnant with twins, leaving John the single father of three young boys. He would credit the women of the Order of the Eastern Star, a women's auxiliary of the Masons, with helping him survive this devastating period. For the rest of his life, Davie wore a red carnation in his lapel&mdash;Ada's favorite flower&mdash;a silent, daily tribute that became his most recognizable trademark.</p>
+    </div>
+  </section>
+
+  <!-- § 3 — WATERFRONT WAR -->
+  <section id="waterfront">
+    <div class="section-header">
+      <span class="section-number">III</span>
+      <h3 class="section-title">David vs. The Octopus <span class="years">1892–1896</span></h3>
+    </div>
+    <div class="two-col">
+      <p class="dropcap">The Southern Pacific Railroad&mdash;known to its many enemies as "The Octopus"&mdash;held a stranglehold on Oakland's waterfront, controlling all shipping, ferry service, and commerce along the shore. It was a monopoly so complete that the railroad had effectively built a fence around the city. John Davie decided to tear it down.</p>
+      <p>The confrontation began when Davie constructed a wharf to serve his feed business, directly challenging the railroad's claim to the waterfront. He then launched his own ferry service&mdash;the only competition to the railroad's boats&mdash;setting fares so low they became known as the "Nickel Ferries." The railroad fought back with every tool at its disposal. Its slower ferries zigzagged in front of Davie's boats in the estuary. Its bridge tenders refused to open the railroad bridges when Davie's ferries signaled for passage.</p>
+      <p>Davie's response was characteristically direct: after consulting with a maritime attorney, he rammed and sank a railroad ferry that was blocking his way. He also physically pulled down the Webster Street and Fruitvale Avenue railroad bridges when they would not open for his boats. He was never indicted for any of it.</p>
+
+      <div class="aside-box">
+        <h4>The Legal Battle</h4>
+        <p>Not content with direct action alone, Davie earned a law degree and argued his case against the Southern Pacific all the way to the United States Supreme Court, eventually claiming at least partial victories over the railroad and winning back the Oakland waterfront for its people. It was, as the Oakland LocalWiki notes, a genuine "David and Goliath" struggle&mdash;and for once, David won.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- § 4 — MAYOR -->
+  <section id="mayor">
+    <div class="section-header">
+      <span class="section-number">IV</span>
+      <h3 class="section-title">Five Terms as Mayor <span class="years">1895–1897, 1915–1931</span></h3>
+    </div>
+    <div class="single-col">
+      <p class="dropcap">In 1895, Davie ran for mayor as a Populist, having narrowly lost two years earlier to George Pardee. This time, backed by a coalition of liberals, small businessmen, and union partisans, he won handily. His pledge to keep taxes low proved his undoing in that first stint&mdash;city services suffered so badly that he was eventually expelled from the Populist Party. He ran for reelection as an Independent and narrowly lost.</p>
+      <p>Davie then vanished into the mountains to mine gold, form California's first consumer cooperative, and have various other adventures. But in 1915, at the age of 65, the Republicans asked him to run again. Even after eighteen years away from politics, his popularity was undiminished. He won that election in the primary, and went on to win three more times, each time in the primary.</p>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-year">1895</div>
+        <div class="timeline-text">First elected mayor as a Populist candidate, defeating the "fusion" nominee backed by Democrats, Republicans, and the Citizens' Municipal League</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">1915</div>
+        <div class="timeline-text">Returns to office after 18 years away, winning with nearly 25,000 votes</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">1917</div>
+        <div class="timeline-text">Easily survives a recall vote: 23,081 in his favor, 9,164 against</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">1919</div>
+        <div class="timeline-text">Wins with over 50% of the vote in a seven-candidate race. Also arrested in Sacramento for refusing to wear a flu mask</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">1923</div>
+        <div class="timeline-text">Wins again with over 50% in a four-candidate race</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">1927</div>
+        <div class="timeline-text">Wins his fifth and final term by a narrower margin, 29,318 to 23,386</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">1931</div>
+        <div class="timeline-text">Retires at age 81, having served 18 total years&mdash;Oakland's longest-serving mayor</div>
+      </div>
+    </div>
+
+    <div class="acc-grid">
+      <div class="acc-card">
+        <h4>Port of Oakland</h4>
+        <p>Created during the Davie years, transforming Oakland into one of the West Coast's most important shipping hubs.</p>
+      </div>
+      <div class="acc-card">
+        <h4>EBMUD</h4>
+        <p>The East Bay Municipal Utility District was established during his tenure, securing reliable water for the East Bay.</p>
+      </div>
+      <div class="acc-card">
+        <h4>Oakland Airport</h4>
+        <p>Oakland International Airport was constructed in 1927 under Davie's administration.</p>
+      </div>
+      <div class="acc-card">
+        <h4>The Posey Tube</h4>
+        <p>The underwater tunnel connecting Oakland and Alameda was built during his time as mayor.</p>
+      </div>
+      <div class="acc-card">
+        <h4>Museums &amp; Culture</h4>
+        <p>Natural history and fine arts museums opened under Davie's watch, enriching Oakland's cultural life.</p>
+      </div>
+      <div class="acc-card">
+        <h4>Skyline Boulevard</h4>
+        <p>Built by city prisoners, this scenic road through the Oakland hills remains one of the city's great drives.</p>
+      </div>
+    </div>
+
+    <div class="aside-box" style="margin-top: 36px;">
+      <h4>The Mask Incident of 1919 ✿</h4>
+      <p>During the influenza pandemic, Davie was an outspoken opponent of mask mandates. While visiting Sacramento to lobby for harbor funding in January 1919, plainclothes officers spotted the mayor with his mask "gracefully draped over one ear." When they approached, he put it on&mdash;then promptly removed it when they turned away and resumed smoking his cigar. He was arrested, walked nine blocks to jail in a fury, threatening to fire officers and swearing language the press called "too foul to repeat in print." Bail was $5, but he didn't have change for a twenty. He was eventually bailed out when another arrestee arrived with smaller bills. He skipped his court date and the fine was simply added to the city's coffers.</p>
+    </div>
+  </section>
+
+  <!-- § 5 — LEGACY -->
+  <section id="legacy">
+    <div class="section-header">
+      <span class="section-number">V</span>
+      <h3 class="section-title">The Final Years &amp; Legacy <span class="years">1931–1934</span></h3>
+    </div>
+    <div class="two-col">
+      <p class="dropcap">After retiring in 1931, Davie moved to the Hotel Oakland, where he continued to "hold court" in the lobby, dapper as ever, red carnation in his lapel. He would walk from the hotel to Lake Merritt for his regular rowing sessions&mdash;a habit he maintained well into his eighties. Visitors and old friends could find him there, dispensing opinions on city affairs with the same force of personality that had won him five elections.</p>
+      <p>He died on February 2, 1934, at the age of 83. In a career that spanned mule skinning, opera singing, railroad battling, and two decades of civic leadership, John L. Davie had shaped Oakland's physical and institutional infrastructure in ways that persist to this day. The Port of Oakland, EBMUD, the airport, Lake Merritt's improvements, the Posey Tube, Skyline Boulevard&mdash;all bear the imprint of his administration.</p>
+      <p>And yet, as the Oakland LocalWiki notes with some bemusement, despite all these accomplishments, the Davie family name appears on only one Oakland landmark: the Davie Tennis Stadium, a set of courts on land he donated "for the children of the East Bay" in 1931, built by the WPA in 1936. The stadium sits entirely within the city limits of Piedmont&mdash;itself entirely within the city limits of Oakland&mdash;because Davie was never one to respect boundaries.</p>
+    </div>
+  </section>
+
+  <!-- § 6 — THE BOOK -->
+  <section id="book">
+    <div class="section-header">
+      <span class="section-number">VI</span>
+      <h3 class="section-title">His Honor, the Buckaroo</h3>
+    </div>
+    <div class="single-col">
+      <p class="dropcap">Davie authored the only autobiography ever written by an Oakland mayor: <em>His Honor, the Buckaroo</em>, first serialized in the Oakland Post-Enquirer and later reprinted in book form. As the Oakland LocalWiki diplomatically puts it, the book "is filled with hokum"&mdash;but the underlying story is extraordinary, and Davie tells it with the same outsized personality he brought to everything else in his long, improbable life.</p>
+      <p>The book remains in print and available today, a testament to the enduring fascination of a man who was, by any measure, one of the most remarkable figures in Oakland's history.</p>
+    </div>
+
+    <div class="pullquote" style="max-width: 680px;">
+      <p>"He resembles the Monopoly man."</p>
+      <span class="attr">&mdash; Dorothy Lazard, Head Librarian, Oakland History Center</span>
+    </div>
+  </section>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="colophon">A Tribute to Oakland's Most Colorful Mayor</div>
+  <p>
+    John Leslie Davie &middot; June 24, 1850 &ndash; February 2, 1934<br>
+    Oakland's 30th &amp; 36th Mayor &middot; Elected five times &middot; Served eighteen years<br>
+    <em>"Always dapper, always with the red carnation."</em>
+  </p>
+  <span class="carnation-footer">✿</span>
+</footer>
+
+</body>
+</html>
