@@ -168,17 +168,17 @@
 
   .portrait-inner {
     text-align: center;
-    padding: 30px;
+    padding: 0;
+    width: 100%;
+    height: 100%;
   }
 
-  .portrait-silhouette {
-    width: 160px;
-    height: 200px;
-    margin: 0 auto 20px;
-    background: var(--divider);
-    border-radius: 50% 50% 0 0;
-    position: relative;
-    opacity: 0.5;
+  .portrait-inner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: sepia(15%) contrast(1.05);
   }
 
   .portrait-caption {
@@ -380,6 +380,29 @@
     font-size: 16px;
     color: var(--sepia);
     line-height: 1.6;
+  }
+
+  .photo-feature {
+    margin: 36px 0;
+    break-inside: avoid;
+  }
+
+  .photo-feature img {
+    width: 100%;
+    max-width: 680px;
+    display: block;
+    border: 2px solid var(--divider);
+    filter: sepia(10%) contrast(1.02);
+  }
+
+  .photo-feature figcaption {
+    font-family: 'Playfair Display', serif;
+    font-size: 13px;
+    font-style: italic;
+    color: var(--faded);
+    margin-top: 10px;
+    line-height: 1.5;
+    max-width: 680px;
   }
 
   /* ── ACCOMPLISHMENTS GRID ── */
@@ -610,13 +633,7 @@
   <div class="hero-visual">
     <div class="portrait-frame">
       <div class="portrait-inner">
-        <div class="portrait-silhouette"></div>
-        <div class="portrait-caption">
-          Mayor John L. Davie<br>
-          <em>Oakland, circa 1920</em><br>
-          <span class="carnation">✿</span>
-          <em style="font-size: 12px; color: var(--faded);">Always with his trademark<br>red carnation</em>
-        </div>
+        <img src="portrait.png" alt="Mayor John L. Davie, Oakland, circa 1920">
       </div>
     </div>
   </div>
@@ -731,6 +748,11 @@
         <div class="timeline-text">Retires at age 81, having served 18 total years&mdash;Oakland's longest-serving mayor</div>
       </div>
     </div>
+
+    <figure class="photo-feature">
+      <img src="our-gang.jpg" alt="Mayor John L. Davie with the cast of Our Gang at the Orpheum Theatre, Oakland, July 1927">
+      <figcaption>Mayor Davie with the cast of "Our Gang" outside the Orpheum Theatre, Oakland, July 1927. Always dapper, always with the red carnation. &mdash; <em>Oakland History Center, Oakland Public Library</em></figcaption>
+    </figure>
 
     <div class="acc-grid">
       <div class="acc-card">
